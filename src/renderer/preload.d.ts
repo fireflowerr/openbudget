@@ -1,8 +1,10 @@
-import { ElectronHandler } from 'main/preload';
+import {addTransaction} from '../main/preloadIpc/addTransaction';
 
 declare global {
   interface Window {
-    electron: ElectronHandler;
+    electron: {
+      addTransaction: typeof addTransaction,
+    }
   }
 }
 
